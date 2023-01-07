@@ -36,7 +36,7 @@ const storage = multer.diskStorage({
     if (start < 0 || end < 0 || end < start || end >= file.originalname.length) {
       shortenedOrOriginalFilename = file.originalname
     } else {
-      shortenedOrOriginalFilename = file.originalname.slice(0, start) + file.originalname.slice(end + 1);
+      shortenedOrOriginalFilename = `${file.originalname.slice(0, start)}${file.originalname.slice(end + 1)}`;
     }
 
     const extensionToCompare = shortenedOrOriginalFilename.split('.').at(-1);
