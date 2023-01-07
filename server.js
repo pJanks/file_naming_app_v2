@@ -28,15 +28,17 @@ const storage = multer.diskStorage({
   },
   filename: (req, file, cb) => {
     let shortenedOrOriginalFilename;
+    const newName = req.params.newName;
     const extension = file.originalname.split('.').at(-1);
     const start = Number(req.params.startPositionToRemove);
     const end = Number(req.params.endPositionToRemove);
+
     if (start < 0 || end < 0 || end < start || end >= file.originalname.length) {
       shortenedOrOriginalFilename = file.originalname
     } else {
       shortenedOrOriginalFilename = file.originalname.slice(0, start) + file.originalname.slice(end + 1);
     }
-    const newName = req.params.new_name;
+
     const extensionToCompare = shortenedOrOriginalFilename.split('.').at(-1);
     if (extensionToCompare !== extension) {
       cb(null, `${newName}_${shortenedOrOriginalFilename}.${extension}`);
@@ -48,10 +50,10 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage });
 
-app.post('/rename/:new_name/:directory/:startPositionToRemove/:endPositionToRemove', upload.any('files'), (req, res) => {
+app.post('/rename/:newName/:directory/:startPositionToRemove/:endPositionToRemove', upload.any('files'), (req, res) => {
   try {
-    res.sendStatus(200);
+    res.status(200).json('success');
   } catch(err) {
-    res.sendStatus(400);
+    res.status(400).json('error');
   }
 });
