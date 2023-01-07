@@ -18,51 +18,51 @@ The default values will return the original name:
 
   - (0, 0) returns `robot_yellow.png`
 
-  End result: `/uploads/[userInputtedDirectory]/[userInputToPrepend]_robot_yellow.png`
+  **End result:** `/uploads/[userInputtedDirectory]/[userInputToPrepend]_robot_yellow.png`
 
 Valid syntax returns a new name with the characters removed between the startPositionValue and endPositionValue (inclusively): new name with the characters removed between the
 
   - (1, 1) returns `obot_yellow.png`
 
-  End result: `/uploads/[userInputtedDirectory]/[userInputToPrepend]_obot_yellow.png`
+  **End result:** `/uploads/[userInputtedDirectory]/[userInputToPrepend]_obot_yellow.png`
 
   - (3, 5) returns `ro_yellow.png`
 
-  End result: `/uploads/[userInputtedDirectory]/[userInputToPrepend]_ro_yellow.png`
+  **End result:** `/uploads/[userInputtedDirectory]/[userInputToPrepend]_ro_yellow.png`
 
 0 is not valid in starting or ending positions. This will return the original name:
 
   - (5, 0) returns `robot_yellow.png`
 
-  End result: `/uploads/[userInputtedDirectory]/[userInputToPrepend]_robot_yellow.png`
+  **End result:** `/uploads/[userInputtedDirectory]/[userInputToPrepend]_robot_yellow.png`
   
   - (0, 2) returns `robot_yellow.png`
 
-  End result: `/uploads/[userInputtedDirectory]/[userInputToPrepend]_robot_yellow.png`
+  **End result:** `/uploads/[userInputtedDirectory]/[userInputToPrepend]_robot_yellow.png`
 
 Negative numbers are not valid in starting or ending positions. This will return the original name:
 
   - (-2, -1) returns `robot_yellow.png`
 
-  End result: `/uploads/[userInputtedDirectory]/[userInputToPrepend]_robot_yellow.png`
+  **End result:** `/uploads/[userInputtedDirectory]/[userInputToPrepend]_robot_yellow.png`
 
 It is not valid to have the ending position less than the starting position. This will return the original name:
 
   - (5, 3) returns `robot_yellow.png`
 
-  End result: `/uploads/[userInputtedDirectory]/[userInputToPrepend]_robot_yellow.png`
+  **End result:** `/uploads/[userInputtedDirectory]/[userInputToPrepend]_robot_yellow.png`
 
 If the ending position extends into the file extension the file extension will be appended to the name ***which may have unexpected results:***
 
   - (7, 14) returns `robot_ng.png`
 
-  End result: `/uploads/[userInputtedDirectory]/[userInputToPrepend]_robot_ng.png`
+  **End result:** `/uploads/[userInputtedDirectory]/[userInputToPrepend]_robot_ng.png`
 
 If all characters are remove it will return only the file extension:
 
   - (1, 16) returns `.png`
 
-  End result: `/uploads/[userInputtedDirectory]/[userInputToPrepend]_.png`
+  **End result:** `/uploads/[userInputtedDirectory]/[userInputToPrepend]_.png`
 
 ## Getting Started
 
