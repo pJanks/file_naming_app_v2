@@ -36,13 +36,13 @@ It is not valid to have the ending position less than the starting position. Thi
 
   - (5, 3) returns `robot_yellow.png`
 
+It is not valid to remove all characters. This will return the original name:
+
+  - (1, 16) returns `robot_yellow.png`
+
 If the ending position extends into the file extension the file extension will be appended to the name ***which may have unexpected results:***
 
   - (7, 14) returns `robot_ng.png`
-
-If all characters are removed only the file extension will be returned:
-
-  - (1, 16) returns `.png`
 
 ## Getting Started
 

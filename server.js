@@ -31,7 +31,7 @@ const storage = multer.diskStorage({
     const extension = file.originalname.split('.').at(-1);
     const start = Number(req.params.startPositionToRemove);
     const end = Number(req.params.endPositionToRemove);
-    if (start < 0 || end < 0 || end < start || end > file.originalname.length) {
+    if (start < 0 || end < 0 || end < start || end >= file.originalname.length) {
       shortenedOrOriginalFilename = file.originalname
     } else {
       shortenedOrOriginalFilename = file.originalname.slice(0, start) + file.originalname.slice(end + 1);
