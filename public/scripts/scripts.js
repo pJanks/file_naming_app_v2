@@ -26,18 +26,17 @@ const handleEnterButtonPress = (e) => {
 const handleSubmit = async (e) => {
   e.preventDefault();
   try {
+    if (fileDropper.prop('files').length) appendFormData(fileDropper.prop('files'));
+
     const newName = $('.new-name-input').val().replace(/\s+/g, '_');
     const directory = $('.directory-input').val().replace(/\s+/g, '_');
     const startPositionToRemove = Number($('.start-input').val()) - 1;
     const endPositionToRemove = Number($('.end-input').val()) - 1;
-    
-    if (fileDropper.prop('files').length) appendFormData(fileDropper.prop('files'));
 
     const options = { method: 'POST', body: formData };
     const url = `http://127.0.0.1:3001/rename/${newName}/${directory}/${startPositionToRemove}/${endPositionToRemove}`;
 
     await fetch(url, options);
-
     $('.success-modal-wrapper').removeClass('hidden');
     setTimeout(() => window.location.reload(), 1000);
   } catch (err) {
