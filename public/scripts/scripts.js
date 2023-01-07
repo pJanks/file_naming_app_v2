@@ -1,3 +1,6 @@
+const socket = io();
+const formData = new FormData();
+
 const fileDropperLabel = $('.file-dropper-label');
 const fileDropperForm = $('.file-dropper-form');
 const fileDropper = $('.file-dropper');
@@ -6,7 +9,7 @@ fileDropperLabel.on('dragover dragenter drop', (e) => handleFileDrop(e));
 fileDropperLabel.on('keypress', (e) => handleEnterButtonPress(e));
 fileDropperForm.on('submit', (e) => handleSubmit(e));
 
-const formData = new FormData();
+
 
 const appendFormData = (fileOrFilesToAppend) => {
   Object.keys(fileOrFilesToAppend).forEach(key => {
