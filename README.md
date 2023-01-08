@@ -20,7 +20,7 @@ The default values will return the original name:
 
   **End result:** `/uploads/[userInputtedDirectory]/[userInputToPrepend]_robot_yellow.png`
 
-Valid syntax returns a new name with the characters removed between the startPositionValue and endPositionValue (inclusively): new name with the characters removed between the
+Valid syntax returns a new name with the characters removed between the startPositionValue and endPositionValue (inclusively):
 
   - (1, 1) returns `obot_yellow.png`
 
@@ -42,7 +42,7 @@ Valid syntax returns a new name with the characters removed between the startPos
 
 Negative numbers are not valid in starting or ending positions. This will return the original name:
 
-  - (-2, -1) returns `robot_yellow.png`
+  - (-2, 3) returns `robot_yellow.png`
 
   **End result:** `/uploads/[userInputtedDirectory]/[userInputToPrepend]_robot_yellow.png`
 
@@ -75,6 +75,7 @@ If all characters are remove it will return only the file extension:
 ## Alternitavely
 
   - clone down this repository
+  - run `npm install`
   - navigate to the project in your file explorer
   - double-click the `start.bat` file ***(this will only work on Windows)***
 

@@ -9,8 +9,6 @@ fileDropperLabel.on('dragover dragenter drop', (e) => handleFileDrop(e));
 fileDropperLabel.on('keypress', (e) => handleEnterButtonPress(e));
 fileDropperForm.on('submit', (e) => handleSubmit(e));
 
-
-
 const appendFormData = (fileOrFilesToAppend) => {
   Object.keys(fileOrFilesToAppend).forEach(key => {
     formData.append('files', fileOrFilesToAppend[key]);
