@@ -72,11 +72,11 @@ If all characters are remove it will return only the file extension:
   - run `node server.js`
   - go to `127.0.0.1:3001` in your web browser
 
-## Alternitavely
+## Alternitavely ***(this will only work on Windows)***
 
   - clone down this repository
   - run `npm install`
   - navigate to the project in your file explorer
-  - double-click the `start.bat` file ***(this will only work on Windows)***
+  - double-click the `start.bat` file
 
 Kill the node service with `ctrl + c` when you are finished using the utility.
