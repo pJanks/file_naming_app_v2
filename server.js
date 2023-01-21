@@ -54,6 +54,6 @@ app.post('/rename/:newName/:directory/:startPositionToRemove/:endPositionToRemov
   try {
     res.status(200).json('success');
   } catch(err) {
-    res.status(400).json('error');
+    res.status(500).json('error');
   }
 });
